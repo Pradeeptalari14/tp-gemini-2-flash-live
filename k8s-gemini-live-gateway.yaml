@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gemini-live-gateway
+  namespace: multimodal-streaming
+  labels:
+    app.kubernetes.io/name: gemini-live-gateway
+    app.kubernetes.io/part-of: multimodal-mesh
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gemini-live-gateway
+  template:
+    metadata:
+      labels:
+        app: gemini-live-gateway
+    spec:
+      containers:
+      - name: live-gateway
+        image: ghcr.io/pradeeptalari14/gemini-live-gateway:v1.0.0
+        ports:
+        - containerPort: 9090
+          name: websocket
+        env:
+        - name: GEMINI_MODEL
+          value: "models/gemini-2.0-flash-exp"
+        - name: TARGET_VIDEO_FPS
+          value: "2"
+        resources:
+          requests:
+            cpu: "500m"
+            memory: "1Gi"
+          limits:
+            cpu: "2"
+            memory: "4Gi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gemini-live-gateway
+  namespace: multimodal-streaming
+spec:
+  type: ClusterIP
+  selector:
+    app: gemini-live-gateway
+  ports:
+  - port: 9090
+    targetPort: 9090
+    name: websocket
