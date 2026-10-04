@@ -45,6 +45,21 @@ flowchart TD
 
 ---
 
+## 💻 Infrastructure & Software Technology Stack
+
+| Layer | Technology & Tools | Production Role |
+|---|---|---|
+| **Bidirectional Streaming Protocol** | WebSockets (WSS), Protobuf / JSON-RPC | Full-duplex simultaneous audio/video upload and low-latency audio response streaming |
+| **Audio Ingress / Egress Codecs** | PCM 16kHz 16-bit Mono (In) / PCM 24kHz (Out) | Native uncompressed audio streaming eliminating transcoding overhead and latency |
+| **Video Frame Sampling Engine** | Pillow (PIL), OpenCV, WebRTC Canvas capture | Dynamic 1-5 FPS JPEG frame generation matching bandwidth and network conditions |
+| **Multimodal Foundation AI Engine** | Google Gemini 2.0 Flash (`gemini-2.0-flash-exp`) | Direct native cross-modal neural transformer with native audio/video comprehension |
+| **Grounding & Real-Time Search** | Google Search Dynamic Retrieval API | Live web grounding injected into conversational turns with verifiable citation metadata |
+| **Tool Calling & Function Execution**| Google GenAI SDK Asynchronous Tool Dispatcher | Structured JSON tool call arguments evaluated locally and streamed back to the model |
+| **Turn Detection & Interruption** | Acoustic Voice Activity Detection (VAD) | Instant client-side barge-in detection terminating downstream playback immediately |
+| **Edge Gateway & Session State** | Envoy Proxy / Cloudflare Workers, Redis 7.2 | Persistent connection routing, session lifecycle management, and ephemeral message buffers |
+
+---
+
 ## 🎯 Where to Use (Real-World Enterprise Production Scenarios)
 
 1. **Hands-Free AR Field Engineering & Industrial Inspection**:
