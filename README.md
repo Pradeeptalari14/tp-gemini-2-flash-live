@@ -1,3 +1,6 @@
+[![Ecosystem](https://img.shields.io/badge/Portfolio%20Ecosystem-341%20Studios-6366f1.svg)](https://pradeeptalari.me/projects/)
+[![Architecture DAG](https://img.shields.io/badge/Architecture-DAG%20%26%20Course-10b981.svg)](https://pradeeptalari.me/tools/repo-learning/)
+
 # Google Gemini 2.0 Flash Multimodal Live API (`tp-gemini-2-flash-live`)
 
 [![CI](https://github.com/Pradeeptalari14/tp-gemini-2-flash-live/actions/workflows/gemini-live-ci.yml/badge.svg)](https://github.com/Pradeeptalari14/tp-gemini-2-flash-live/actions)
@@ -141,3 +144,6 @@ tp-gemini-2-flash-live/
 - **Bidi WebSocket Keep-Alive**: Client emits ping heartbeats every 5,000ms; if no ACK is received within 10,000ms, fallback failover to alternate GCP region triggers.
 - **Dynamic FPS Throttling**: If network jitter exceeds 80ms, the camera stream drops from 2 FPS to 1 FPS automatically to protect voice stream fidelity.
 - **Zero Raw Recording Storage**: Audio and video buffers are processed entirely in ephemeral volatile RAM and purged immediately following packet transmission.
+
+---
+*Synchronized with [Gemini 2.0 Flash Live API Studio Studio](https://pradeeptalari.me/tools/gemini-2-flash-live/) & [Repository Learning DAG](https://pradeeptalari.me/tools/repo-learning/) — [Talari Pradeep Portfolio](https://pradeeptalari.me)*
